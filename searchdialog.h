@@ -5,9 +5,12 @@
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
 
-namespace Ui { class searchDialog; }
+namespace Ui {
+class SearchDialog;
+}
 
-class SearchDialog : public QDialog {
+class SearchDialog : public QDialog
+{
     Q_OBJECT
 
 public:
@@ -18,7 +21,7 @@ private slots:
     void on_pushButton_clicked(); // UI의 검색 버튼
 
 private:
-    Ui::searchDialog *ui;
+    Ui::SearchDialog *ui;
     QSortFilterProxyModel *proxyModel;
 };
 

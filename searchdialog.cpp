@@ -1,12 +1,13 @@
 #include "searchdialog.h"
-#include "./ui_searchdialog.h"
+#include "ui_searchdialog.h"
 #include <QHeaderView>
 
-SearchDialog::SearchDialog(QStandardItemModel *model, QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::searchDialog)
+SearchDialog::SearchDialog(QStandardItemModel *model, QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::SearchDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("[Search] PC Room Management System - VEDA-PC-ROOM");
 
     // 프록시 모델을 생성하고 MainWindow에서 받아온 원본 모델을 연결
     proxyModel = new QSortFilterProxyModel(this);
@@ -22,7 +23,8 @@ SearchDialog::SearchDialog(QStandardItemModel *model, QWidget *parent) :
     ui->tableView->setColumnHidden(2, true);
 }
 
-SearchDialog::~SearchDialog() {
+SearchDialog::~SearchDialog()
+{
     delete ui;
 }
 
